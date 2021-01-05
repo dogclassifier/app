@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dog Breed Classifier</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleIndex.css" />
+    <!-- load processing library-->
+  	<script src="p5.min.js"></script>
+  	<script src="p5.dom.min.js"></script>
+  	<!-- load ml5.js -->
+  	<script src="ml5.min.js" ></script>
+    <script src="indexScript.js" ></script>
+    <link rel="manifest" href="manifest.json" >
+
+
+
+    <div class="container pt-0">
+      <h1 id= "glow" class= "glow" >Dog Breed Classifier</h1>
+      <p id="glow1" class="glow1"> Identify 120 breeds</p>
+      <label id = "gallery" onClick="imageClassifier()">[Gallery]</label>
+      <label id = "picture"  onClick="camClassifier()">[Picture]</label>
+      <label id = "vid"  onClick="vidClassifier()">[Video]</label>
+    </div>
+      <hr>
+    <div class="container pt-0">
+      <input type="file" id="uploader" accept= "image/* capture=camera" onchange="imgResize()">
+      <label id = "Class1">This is test</label>
+      <label id = "Class2">This is testing</label>
+    </div>
+
+
+</head>
+
+<div id= "contMenu" class="container pt-0">
+    <div class="row">
+        <div class="col-lg-12">
+          <br>
+          <div class="text-center">
+          <img id="imageBtn1" class= "img-responsive center-block d-block mx-auto" src="menuImg.png" onClick="imageClassifier()">Image gallery</img><br><br>
+          <img id="cameraBtn1" class="img-responsive center-block d-block mx-auto"  src="menuCam.png" onClick="camClassifier()">Live picture</img><br><br>
+          <img id="videoBtn1" class="img-responsive center-block d-block mx-auto" src="menuVid.png" onClick="vidClassifier()">Live video</img><br>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<div id= "sections" class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="text-center">
+          <img id="image" class="mx-auto d-block" ></img><br>
+          <canvas id="elem" class="mx-auto d-block"  ></canvas><br>
+          <video id="video" class="mx-auto d-block" ></video><br>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPTS here -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+
+  <img id="snapBtn" src="camButton.png"></img>
+  <img id= "playBtn" src="playButton.png"></img>
+  <img id="pauseBtn" src= "pauseButton.png"></img>
+
+  <div id= "credit" class="footer">
+          <hr>
+          <p> Credit:<br>Object detection and segmentation uses 'Common Objects in Context' Single-Shot Multibox Detection (COCO-SSD) model. Object classification model developed on 'Teachable Machine with Google'.</p>
+
+  </div>
+
+
+
+
+
+
+</html>

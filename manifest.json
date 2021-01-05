@@ -1,0 +1,14 @@
+{
+  "short_name": "Dog Breed Classifier",
+  "name": "Dog Breed Classifier",
+  "icons": [
+    {
+      "src": "fevicon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
