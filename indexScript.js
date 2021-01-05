@@ -318,7 +318,7 @@ function camClassifier(){
                                          video: {
 
                                              facingMode: {
-                                              exact: "user"
+                                              exact: "environment"
                                             }
 
                                          },
