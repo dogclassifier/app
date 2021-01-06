@@ -251,14 +251,14 @@ function imageClassifier(){
 
                                     document.getElementById('Class1').innerHTML = results2[0].label+ " ("+val1+"%)";
                                     if (results2[1].confidence>=0.2){document.getElementById('Class2').innerHTML = results2[1].label+ " ("+val2+"%)"};
-                                    console.log(document.getElementById("head").clientHeight);
+                                    
                                     }
 // CODE FOR IMAGE CLASSIFIER ENDS HERE
 
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
-if (elem!="undefined"){document.getElementById("elem").style,display="none";}
+if (elem!="undefined"){document.getElementById("elem").style.display="none";}
 loop();
   menuMode=2;
   document.getElementById("glow").style.display="none";
@@ -390,7 +390,7 @@ loop();
 
 //// Video classification begins HERE
 function vidClassifier(){
-if (image!="undefined"){image.remove();}
+if (elem!="undefined"){document.getElementById("elem").style.display="none";}
 loop();
   menuMode=3;
   document.getElementById("glow").style.display="none";
