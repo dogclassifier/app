@@ -258,7 +258,7 @@ function imageClassifier(){
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
-if (image!="undefined"){image.remove();}
+if (elem!="undefined"){elem.remove();}
 loop();
   menuMode=2;
   document.getElementById("glow").style.display="none";
