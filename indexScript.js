@@ -258,6 +258,7 @@ function imageClassifier(){
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
+if (image!="undefined"){image.remove();}
 loop();
   menuMode=2;
   document.getElementById("glow").style.display="none";
@@ -389,6 +390,7 @@ loop();
 
 //// Video classification begins HERE
 function vidClassifier(){
+if (image!="undefined"){image.remove();}
 loop();
   menuMode=3;
   document.getElementById("glow").style.display="none";
