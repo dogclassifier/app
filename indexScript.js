@@ -50,7 +50,7 @@ function modelLoaded2() {
     console.log('Classifier Loaded!');
     status2=1;
 }
-loop();
+
 function setup(){
   document.getElementById("glow1").innerHTML="Loading model... may take 30 seconds!";
   document.getElementById("contMenu").style.display="none";
