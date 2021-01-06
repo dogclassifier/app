@@ -1,4 +1,3 @@
-play();
 var imgDetectedData;
 var imgOriginalData1;
 var imgOriginalData2;
@@ -39,7 +38,7 @@ let pause=0;
 let menuMode=0;
 let head=0;
 
-
+play();
 
 
 const detector = ml5.objectDetector("cocossd", modelLoaded1);
