@@ -38,9 +38,6 @@ let pause=0;
 let menuMode=0;
 let head=0;
 
-play();
-
-
 const detector = ml5.objectDetector("cocossd", modelLoaded1);
 const classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/5qU2g2ZBu/model.json", modelLoaded2);
 // Load the model
