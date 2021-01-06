@@ -50,7 +50,7 @@ function modelLoaded2() {
     console.log('Classifier Loaded!');
     status2=1;
 }
-
+loop();
 function setup(){
   document.getElementById("glow1").innerHTML="Loading model... may take 30 seconds!";
   document.getElementById("contMenu").style.display="none";
@@ -77,7 +77,7 @@ function imageClassifier(){
                                     document.getElementById('pauseBtn').style.display="none";
                                     document.getElementById('Class1').innerHTML = "Upload a clear colour image. Waiting...";
                                     document.getElementById('Class2').innerHTML = "";
-				noPlay();
+				noLoop();
 				if (cnv!="undefined"){cnv.remove();}
 
 
@@ -258,7 +258,7 @@ function imageClassifier(){
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
-play();
+loop();
   menuMode=2;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
@@ -389,7 +389,7 @@ play();
 
 //// Video classification begins HERE
 function vidClassifier(){
-play();
+loop();
   menuMode=3;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
