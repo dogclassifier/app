@@ -1,4 +1,4 @@
-
+play();
 var imgDetectedData;
 var imgOriginalData1;
 var imgOriginalData2;
@@ -81,6 +81,8 @@ function imageClassifier(){
                                     document.getElementById('pauseBtn').style.display="none";
                                     document.getElementById('Class1').innerHTML = "Upload a clear colour image. Waiting...";
                                     document.getElementById('Class2').innerHTML = "";
+				noPlay();
+				if (cnv!="undefined"){cnv.remove();}
 
 
   }                                  // resize image
@@ -260,6 +262,7 @@ function imageClassifier(){
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
+play();
   menuMode=2;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
@@ -390,6 +393,7 @@ function camClassifier(){
 
 //// Video classification begins HERE
 function vidClassifier(){
+play();
   menuMode=3;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
