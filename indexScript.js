@@ -258,8 +258,8 @@ function imageClassifier(){
 // CODE FOR CAM CLASSIFIER STARTS BELOW
 
 function camClassifier(){
-document.getElementById("elem").getContext("2d").clearRect(0,0,elem.width, elem.height);
 loop();
+document.getElementById("elem").getContext("2d").clearRect(0,0,elem.width, elem.height);
   menuMode=2;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
@@ -309,7 +309,7 @@ document.getElementById('Class2').innerHTML = "";
                           }
 
                           if (menuMode==3){
-                            frameRate(5);
+                            frameRate(2);
                           }
 
 
@@ -394,8 +394,8 @@ document.getElementById('Class2').innerHTML = "";
 
 //// Video classification begins HERE
 function vidClassifier(){
-document.getElementById("elem").getContext("2d").clearRect(0,0,elem.width, elem.height);
 loop();
+document.getElementById("elem").getContext("2d").clearRect(0,0,elem.width, elem.height);
   menuMode=3;
   document.getElementById("glow").style.display="none";
   document.getElementById("glow1").style.display="none";
@@ -480,6 +480,7 @@ function vidGotResults(error, results2) {
   text(cresult, objX+ 10, objY + 24);
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
-  if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
+if (play==0) {playClassify();}  
+if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
 }
