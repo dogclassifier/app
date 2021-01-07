@@ -238,7 +238,7 @@ function imageClassifier(){
 
 
                                     	const results2 = await classifier.classify(imgDetectedData);
-                                      document.getElementById("elem").getContext("2d").strokeStyle="#00ff00";
+                                      document.getElementById("elem").getContext("2d").strokeStyle="#ff0f39";
                                     	document.getElementById("elem").getContext("2d").lineWidth="4";
                                     	document.getElementById("elem").getContext("2d").strokeRect(sx,sy,sw,sh);//console.log(elem.width,elem.height);
                                     	//document.getElementById('Class4').innerHTML="Dog detected";
@@ -468,12 +468,12 @@ function vidGotResults(error, results2) {
     console.error(error);
   }
   cresult = results2[0].label;
-  stroke(255,0,0);
+  stroke(255,15,57);
   strokeWeight(4);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
-  fill(255,0,0);
+  fill(255,15,57);
   textSize(24);
   textFont("Lato");
   text(cresult, objX+ 10, objY + 24);
