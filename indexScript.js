@@ -421,7 +421,7 @@ loop();
   document.getElementById('pauseBtn').style.bottom="50px";
   document.getElementById('pauseBtn').style.left= Math.round(window.innerWidth/2)+20+"px";
   cresult="";
-noLoop();
+
 document.getElementById('Class1').innerHTML = "Play to start classifier and pause to stop";
 document.getElementById('Class2').innerHTML = "";
   startCam();
