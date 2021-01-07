@@ -378,7 +378,7 @@ document.getElementById('Class2').innerHTML = "";
                                          else {loop(); document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
                                   }
-				loop();
+				
                           }
 
                           function camGotResults(error, results2) {
@@ -389,6 +389,7 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
+				  Loop();
                           }
 
 //// Video classification begins HERE
