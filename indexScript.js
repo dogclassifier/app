@@ -307,11 +307,11 @@ document.getElementById('Class2').innerHTML = "";
                           console.log(menuMode);
                           // change style sheet
                           if (menuMode==2){
-                            frameRate(25);
+                            frameRate(30);
                           }
 
                           if (menuMode==3){
-                            frameRate(2);
+                            frameRate(30);
                           }
 
 
@@ -342,7 +342,7 @@ document.getElementById('Class2').innerHTML = "";
                                     cnv.position(posX, posY, 'relative');
                                     camCapture = createCapture(options);
                                     camCapture.size(w,h);
-                                    camCapture.hide();
+                                    options.hide();
                                     // Create camera Button position
 
                                     }
