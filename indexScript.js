@@ -329,10 +329,10 @@ document.getElementById('Class2').innerHTML = "";
 
 
                                     w=window.innerWidth;
-                                    head=160;
+                                    head=120;
                                     h=0;
-                                    if ((window.innerHeight-head-100)>w*1.33) {h=w*1.33;}
-                                    else {h=window.innerHeight-head-100;}
+                                    if ((window.innerHeight-2*head)>w*1.33) {h=w*1.33;}
+                                    else {h=window.innerHeight-2*head;}
                                     //console.log(w,h,head);
                                     cnv=createCanvas(w,h);
                                     posX=(window.innerWidth-w)/2;
