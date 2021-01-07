@@ -309,7 +309,7 @@ document.getElementById('Class2').innerHTML = "";
                           }
 
                           if (menuMode==3){
-                            frameRate(25);
+                            frameRate(5);
                           }
 
 
@@ -422,19 +422,19 @@ loop();
   document.getElementById('pauseBtn').style.left= Math.round(window.innerWidth/2)+20+"px";
   cresult="";
 noLoop();
-document.getElementById('Class1').innerHTML = "Click on play to start video classification and pause to stop";
+document.getElementById('Class1').innerHTML = "Play to start classifier and pause to stop";
 document.getElementById('Class2').innerHTML = "";
   startCam();
 }
 
 function playClassify(){
-if(menuMode==3) {play=0;loop();
+if(menuMode==3) {play=0;
 detector.detect(camCapture,vidGotDetection);}
 
 }
 
 function pauseClassify(){
-if(menuMode==3) {play=1;noLoop();}
+if(menuMode==3) {play=1;}
 }
 
 function vidClassification(){
