@@ -419,17 +419,18 @@ loop();
   document.getElementById('pauseBtn').style.bottom="50px";
   document.getElementById('pauseBtn').style.left= Math.round(window.innerWidth/2)+20+"px";
   cresult="";
+noLoop();
   startCam();
 }
 
 function playClassify(){
-if(menuMode==3) {play=0;
+if(menuMode==3) {play=0;loop();
 detector.detect(camCapture,vidGotDetection);}
 
 }
 
 function pauseClassify(){
-if(menuMode==3) {play=1;}
+if(menuMode==3) {play=1;noLoop();}
 }
 
 function vidClassification(){
