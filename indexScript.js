@@ -307,7 +307,7 @@ loop();
                           }
 
                           if (menuMode==3){
-                            frameRate(10);
+                            frameRate(1);
                           }
 
 
@@ -365,7 +365,7 @@ loop();
                         }
 
                         function camGotDetection(error,results1) {
-
+					
                                   	if(error){
                                            console.error(error);
                                          }
@@ -376,6 +376,7 @@ loop();
                                          else {loop();document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
                                   }
+				loop();
                           }
 
                           function camGotResults(error, results2) {
