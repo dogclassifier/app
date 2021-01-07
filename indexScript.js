@@ -357,7 +357,7 @@ document.getElementById('Class2').innerHTML = "";
                         function draw() {
                               if (menuMode==0 & status1==1 & status2==1) {document.getElementById("glow1").innerHTML="Identify 120 breeds";
                                                                           document.getElementById("contMenu").style.display="block";}
-                               if (menuMode==2 | menuMode==3){image(camCapture,0,0,w,h);}
+                               if (menuMode==2 | menuMode==3){loop(); image(camCapture,0,0,w,h);}
                         }
 
                         function snapFunction(){
