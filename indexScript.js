@@ -282,6 +282,8 @@ loop();
   document.getElementById('snapBtn').style.position="fixed";
   document.getElementById('snapBtn').style.bottom="50px";
   document.getElementById('snapBtn').style.left= Math.round(window.innerWidth/2)-20+"px";
+document.getElementById('Class1').innerHTML = "Click on camera button to identify";
+document.getElementById('Class2').innerHTML = "";
   cresult="";
   startCam();
 
@@ -420,6 +422,8 @@ loop();
   document.getElementById('pauseBtn').style.left= Math.round(window.innerWidth/2)+20+"px";
   cresult="";
 noLoop();
+document.getElementById('Class1').innerHTML = "Click on play to start video classification and pause to stop";
+document.getElementById('Class2').innerHTML = "";
   startCam();
 }
 
