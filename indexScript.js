@@ -55,6 +55,7 @@ function modelLoaded2() {
 function setup(){
   document.getElementById("glow1").innerHTML="Loading model... may take 30 seconds!";
   document.getElementById("contMenu").style.display="none";
+loop();
   }
 // RUN IMAGE CLASSFIER BEGINS BELOW
 function imageClassifier(){
@@ -364,7 +365,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function camClassification(){
-                                    if(menuMode==2){loop(); classifier.classify(camCapture,camGotResults);}
+                                    if(menuMode==2){classifier.classify(camCapture,camGotResults);}
                         }
 
                         function camGotDetection(error,results1) {
@@ -430,7 +431,7 @@ document.getElementById('Class2').innerHTML = "";
 }
 
 function playClassify(){
-if(menuMode==3) {play=0;
+if(menuMode==3) {play=0; loop();
 detector.detect(camCapture,vidGotDetection);}
 
 }
