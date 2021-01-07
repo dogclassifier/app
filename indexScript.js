@@ -307,7 +307,7 @@ loop();
                           }
 
                           if (menuMode==3){
-                            frameRate(1);
+                            frameRate(25);
                           }
 
 
