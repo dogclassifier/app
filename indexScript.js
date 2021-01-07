@@ -342,7 +342,7 @@ document.getElementById('Class2').innerHTML = "";
                                     cnv.position(posX, posY, 'relative');
                                     camCapture = createCapture(options);
                                     camCapture.size(w,h);
-                                    options.hide();
+                                    camCapture.hide();
                                     // Create camera Button position
 
                                     }
