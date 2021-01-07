@@ -363,7 +363,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function camClassification(){
-                                    if(menuMode==2){classifier.classify(camCapture,camGotResults);}
+                                    if(menuMode==2){loop(); classifier.classify(camCapture,camGotResults);}
                         }
 
                         function camGotDetection(error,results1) {
@@ -375,7 +375,7 @@ document.getElementById('Class2').innerHTML = "";
                                          let object = results1[i];
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
                                                                   camClassification();}
-                                         else {loop();document.getElementById("Class1").innerHTML=object.label;
+                                         else {loop(); document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
                                   }
 				loop();
