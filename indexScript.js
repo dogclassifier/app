@@ -1,4 +1,4 @@
-document.body.requestFullscreen();
+
 var imgDetectedData;
 var imgOriginalData1;
 var imgOriginalData2;
