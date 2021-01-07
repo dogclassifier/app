@@ -336,7 +336,7 @@ document.getElementById('Class2').innerHTML = "";
                                     if ((window.innerHeight-2*head)>w*1.33) {h=w*1.33;}
                                     else {h=window.innerHeight-2*head;}
                                     //console.log(w,h,head);
-                                    cnv=createCanvas(w,h);
+                                    cnv=createCanvas(w,h,WEBGL);
                                     posX=(window.innerWidth-w)/2;
                                     posY=head;
                                     cnv.position(posX, posY, 'relative');
