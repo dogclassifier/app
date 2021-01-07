@@ -100,7 +100,7 @@ hr {
 color: #fff;
 font-family: "permanent marker";
 font-size: 18px;
-font-weight: bold;
+font-weight: normal;
 width: 100%;
 float: float;
 text-align:center
@@ -111,7 +111,7 @@ display: none;
 color: #fff;
 font-family: Lato;
 font-size: 18px;
-font-weight: bold;
+font-weight: normal;
 width: 100%;
 float: float;
 text-align:center
