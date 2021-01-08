@@ -380,12 +380,12 @@ document.getElementById('Class2').innerHTML = "";
          objW=object.width;
          objH=object.height;
 	stroke(255,15,57);
-  strokeWeight(4);
+  strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
   fill(255,15,57);
-  textSize(24);
+  textSize(14);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
@@ -404,7 +404,7 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
-				  Loop();
+				  loop();
                           }
 
 //// Video classification begins HERE
@@ -469,12 +469,12 @@ function vidGotDetection(error,results1) {
          objW=object.width;
          objH=object.height;
 	stroke(255,15,57);
-  strokeWeight(4);
+  strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
   fill(255,15,57);
-  textSize(24);
+  textSize(14);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
 		
