@@ -388,9 +388,9 @@ document.getElementById('Class2').innerHTML = "";
   textSize(14);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
-                                         if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
+                                         if (object.label=="dog"){noLoop();document.getElementById("Class1").innerHTML=object.label;
                                                                   camClassification();}
-                                         else {loop(); document.getElementById("Class1").innerHTML=object.label;
+                                         else {document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
                                   }
 				
@@ -463,20 +463,7 @@ function vidGotDetection(error,results1) {
          console.error(error);
        }
 	for(let i = 0; i<results1.length; i++){
-       object = results1[i];
-	objX=object.x;
-         objY=object.y;
-         objW=object.width;
-         objH=object.height;
-	stroke(255,15,57);
-  strokeWeight(2);
-  noFill();
-  rect(objX,objY,objW,objH);
-  noStroke();
-  fill(255,15,57);
-  textSize(14);
-  textFont("Lato");
-  text(object.label, objX+ 10, objY + 24);
+       
 		
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
@@ -495,6 +482,20 @@ function vidGotResults(error, results2) {
     console.error(error);
   }
   cresult = results2[0].label;
+	object = results1[i];
+	objX=object.x;
+         objY=object.y;
+         objW=object.width;
+         objH=object.height;
+	stroke(255,15,57);
+  strokeWeight(2);
+  noFill();
+  rect(objX,objY,objW,objH);
+  noStroke();
+  fill(255,15,57);
+  textSize(14);
+  textFont("Lato");
+  text(cresult, objX+ 10, objY + 24);
   
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
