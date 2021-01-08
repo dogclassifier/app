@@ -357,7 +357,7 @@ document.getElementById('Class2').innerHTML = "";
                         function draw() {
                               if (menuMode==0 & status1==1 & status2==1) {document.getElementById("glow1").innerHTML="Identify 120 breeds";
                                                                           document.getElementById("contMenu").style.display="block";}
-                               if (menuMode==2 | menuMode==3){loop(); image(camCapture,0,0,w,h);}
+                               if (menuMode==2 | menuMode==3){loop(); image(camCapture,0,0,w,h); detector.detect(camCapture,camGotDetection);}
                         }
 
                         function snapFunction(){
@@ -467,7 +467,13 @@ function vidGotDetection(error,results1) {
 		
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
-      if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
+      if (object.label=="dog"){document.getElementById("Class1").innerHTML=";
+			       object = results1[i];
+	objX=object.x;
+         objY=object.y;
+         objW=object.width;
+         objH=object.height;
+	stroke(255,15,57);
          
          vidClassification();}
        else {document.getElementById("Class1").innerHTML=lbl;}
@@ -482,12 +488,7 @@ function vidGotResults(error, results2) {
     console.error(error);
   }
   cresult = results2[0].label;
-	object = results1[i];
-	objX=object.x;
-         objY=object.y;
-         objW=object.width;
-         objH=object.height;
-	stroke(255,15,57);
+	
   strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
