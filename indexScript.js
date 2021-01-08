@@ -375,6 +375,20 @@ document.getElementById('Class2').innerHTML = "";
                                          }
                                   	for(let i = 0; i<results1.length; i++){
                                          let object = results1[i];
+					 objX=object.x;
+					 objY=object.y;
+					 objW=object.width;
+					 objH=object.height;
+					stroke(255,15,57);
+					  strokeWeight(2);
+					  noFill();
+					  rect(objX,objY,objW,objH);
+					  noStroke();
+					  fill(255,15,57);
+					  textSize(14);
+					  textFont("Lato");
+					  text(object.label, objX+ 10, objY + 24);
+					
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
                                                                   camClassification();}
                                          else {loop(); document.getElementById("Class1").innerHTML=object.label;
@@ -472,12 +486,12 @@ function vidGotResults(error, results2) {
   }
   cresult = results2[0].label;
   stroke(255,15,57);
-  strokeWeight(4);
+  strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
   fill(255,15,57);
-  textSize(24);
+  textSize(14);
   textFont("Lato");
   text(cresult, objX+ 10, objY + 24);
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
