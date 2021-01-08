@@ -405,7 +405,7 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
-				  Loop();
+				  loop();
                           }
 
 //// Video classification begins HERE
