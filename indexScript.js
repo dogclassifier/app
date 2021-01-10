@@ -379,7 +379,7 @@ document.getElementById('Class2').innerHTML = "";
 					 objY=object.y;
 					 objW=object.width;
 					 objH=object.height;
-					 doglbl=object.lbl;
+					 doglbl=object.label;
                                          
                                   }
 				
@@ -467,11 +467,15 @@ strokeWeight(0);
        }
 	for(let i = 0; i<results1.length; i++){
        object = results1[i];
-		 objX=object.x;
+	objX=object.x;
          objY=object.y;
          objW=object.width;
          objH=object.height;
-			       stroke(255,15,57);
+
+       if (i==0) {lbl=object.label;}
+      if (i>0) {lbl=lbl+"-"+object.label;}
+      doglbl=object.label;
+stroke(255,15,57);
   strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
@@ -479,15 +483,12 @@ strokeWeight(0);
   fill(255,15,57);
   textSize(18);
   textFont("Lato");
-  text(object.label, objX+ 10, objY + 24);
+  text(lbl, objX+ 10, objY + 24);
  fill(0,0,0);
-       if (i==0) {lbl=object.label;}
-      if (i>0) {lbl=lbl+"-"+object.label;}
-      doglbl=object.label;
 }
       if (play==0 & doglbl=="dog") {vidClassification();}
       if (play==0 & doglbl!="dog") {playClassify();}
-	if (play==1){playClassify(); document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
+	if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                     document.getElementById("Class2").innerHTML= "";}
 	
 }
