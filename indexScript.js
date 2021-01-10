@@ -39,6 +39,7 @@ let pause=0;
 let menuMode=0;
 let head=0;
 
+
 const detector = ml5.objectDetector("cocossd", modelLoaded1);
 const classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/5qU2g2ZBu/model.json", modelLoaded2);
 // Load the model
@@ -307,11 +308,11 @@ document.getElementById('Class2').innerHTML = "";
                           console.log(menuMode);
                           // change style sheet
                           if (menuMode==2){
-                            frameRate(30);
+                            frameRate(20);
                           }
 
                           if (menuMode==3){
-                            frameRate(30);
+                            frameRate(20);
                           }
 
 
@@ -361,7 +362,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function snapFunction(){
-                                    if (menuMode==2){doglbl="";detector.detect(camCapture,camGotDetection);}
+                                    if (menuMode==2){doglbl=""; lbl=""; detector.detect(camCapture,camGotDetection);}
                         }
 
                         function camClassification(){
@@ -448,14 +449,14 @@ document.getElementById('Class2').innerHTML = "";
 }
 
 function playClassify(){
-if(menuMode==3) {play=0; loop();
+if(menuMode==3) {play=0; doglbl=""; lbl=""; loop();
 detector.detect(camCapture,vidGotDetection);}
 
 }
 
 function pauseClassify(){
 
-if(menuMode==3) {doglbl=""; play=1;}
+if(menuMode==3) {play=1;}
 }
 
 function vidClassification(){
