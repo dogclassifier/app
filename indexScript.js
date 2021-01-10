@@ -361,7 +361,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function snapFunction(){
-                                    if (menuMode==2){noLoop();detector.detect(camCapture,camGotDetection);}
+                                    if (menuMode==2){detector.detect(camCapture,camGotDetection);}
                         }
 
                         function camClassification(){
@@ -369,7 +369,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function camGotDetection(error,results1) {
-					
+					noLoop();
                                   	if(error){
                                            console.error(error);
                                          }
@@ -505,18 +505,7 @@ function vidGotResults(error, results2) {
   
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
-	objY=object.y;
-         objW=object.width;
-         objH=object.height;
-			       stroke(0,0,255);
-  strokeWeight(1);
-  noFill();
-  rect(objX,objY,objW,objH);
-  noStroke();
-  fill(0,0,255);
-  textSize(18);
-  textFont("Lato");
-  text(cresult, objX+ 10, objY + 24);
+	
 if (play==0) {playClassify();}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
