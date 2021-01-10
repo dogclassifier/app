@@ -406,7 +406,7 @@ document.getElementById('Class2').innerHTML = "";
 					  textSize(14);
 					  textFont("Lato");
 					  text(cresult, objX+ 10, objY + 24);
-				  setTimeout(loop(),3000);
+				  loop();
                           }
 
 //// Video classification begins HERE
@@ -502,4 +502,5 @@ function vidGotResults(error, results2) {
 if (play==0) {playClassify();}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
+strokeWeight(0);
 }
