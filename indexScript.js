@@ -362,7 +362,9 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function snapFunction(){
-                                    if (menuMode==2){doglbl=""; lbl=""; detector.detect(camCapture,camGotDetection);}
+                                document.getElementById("Class1").innerHTML="";
+				document.getElementById("Class2").innerHTML="";
+				if (menuMode==2){doglbl=""; lbl=""; detector.detect(camCapture,camGotDetection);}
                         }
 
                         function camClassification(){
@@ -396,12 +398,13 @@ document.getElementById('Class2').innerHTML = "";
                                       console.error(error);
                                     }
                                     cresult = results2[0].label;
-				  strokeWeight(5);
+				  	stroke(0,0,255);
+				  	strokeWeight(5);
 					  noFill();
 					  rect(objX,objY,objW,objH);
 					  noStroke();
-					  fill(255,15,57);
-					  textSize(18);
+					  fill(0,0,255);
+					  textSize(20);
 					  textFont("Lato");
 					  text(cresult, objX+ 10, objY + 24);
                                     document.getElementById("Class1").innerHTML="dog";
@@ -449,6 +452,9 @@ document.getElementById('Class2').innerHTML = "";
 }
 
 function playClassify(){
+document.getElementById("Class1").innerHTML="";
+document.getElementById("Class2").innerHTML=""
+	
 if(menuMode==3) {play=0; doglbl=""; lbl=""; loop();
 detector.detect(camCapture,vidGotDetection);}
 
@@ -479,13 +485,13 @@ strokeWeight(0);
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
       if(object.label=="dog") {doglbl=object.label;}
-stroke(255,15,57);
+stroke(0,0,255);
   strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
-  fill(255,15,57);
-  textSize(18);
+  fill(0,0,255);
+  textSize(20);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
  fill(0,0,0);
@@ -507,7 +513,7 @@ function vidGotResults(error, results2) {
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
 	
-if (play==0) {playClassify();}  
+if (play==0) {setTimeout(playClassify,3000);}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
 
