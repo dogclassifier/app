@@ -241,7 +241,7 @@ function imageClassifier(){
 
                                     	const results2 = await classifier.classify(imgDetectedData);
                                       document.getElementById("elem").getContext("2d").strokeStyle="#ff0f39";
-                                    	document.getElementById("elem").getContext("2d").lineWidth="4";
+                                    	document.getElementById("elem").getContext("2d").lineWidth="2";
                                     	document.getElementById("elem").getContext("2d").strokeRect(sx,sy,sw,sh);//console.log(elem.width,elem.height);
                                     	//document.getElementById('Class4').innerHTML="Dog detected";
                                     //console.log(sx+sw, sy+sh);
@@ -381,6 +381,15 @@ document.getElementById('Class2').innerHTML = "";
 					 objH=object.height;
 					
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
+								  stroke(255,15,57);
+					  strokeWeight(2);
+					  noFill();
+					  rect(objX,objY,objW,objH);
+					  noStroke();
+					  fill(255,15,57);
+					  textSize(18);
+					  textFont("Lato");
+					  text(cresult, objX+ 10, objY + 24);
                                                                   camClassification();}
                                          else {loop(); document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
@@ -397,15 +406,7 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
 				  
-					stroke(255,15,57);
-					  strokeWeight(2);
-					  noFill();
-					  rect(objX,objY,objW,objH);
-					  noStroke();
-					  fill(255,15,57);
-					  textSize(14);
-					  textFont("Lato");
-					  text(cresult, objX+ 10, objY + 24);
+					
 				  loop();
                           }
 
@@ -502,5 +503,5 @@ function vidGotResults(error, results2) {
 if (play==0) {playClassify();}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
-strokeWeight(0);
+
 }
