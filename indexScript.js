@@ -462,7 +462,8 @@ detector.detect(camCapture,vidGotDetection);}
 }
 
 function pauseClassify(){
-doglbl=""; lbl="";
+doglbl=""; 
+lbl="";
 document.getElementById("Class1").innerHTML="";
 document.getElementById("Class2").innerHTML=""
 if(menuMode==3) {play=1;}
