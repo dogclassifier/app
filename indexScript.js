@@ -379,15 +379,6 @@ document.getElementById('Class2').innerHTML = "";
 					 objY=object.y;
 					 objW=object.width;
 					 objH=object.height;
-					stroke(255,15,57);
-					  strokeWeight(2);
-					  noFill();
-					  rect(objX,objY,objW,objH);
-					  noStroke();
-					  fill(255,15,57);
-					  textSize(14);
-					  textFont("Lato");
-					  text(object.label, objX+ 10, objY + 24);
 					
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
                                                                   camClassification();}
@@ -405,7 +396,17 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
-				  loop();
+				  
+					stroke(255,15,57);
+					  strokeWeight(2);
+					  noFill();
+					  rect(objX,objY,objW,objH);
+					  noStroke();
+					  fill(255,15,57);
+					  textSize(14);
+					  textFont("Lato");
+					  text(cresult, objX+ 10, objY + 24);
+				  setTimeout(loop(),3000);
                           }
 
 //// Video classification begins HERE
@@ -465,13 +466,23 @@ function vidGotDetection(error,results1) {
        }
 	for(let i = 0; i<results1.length; i++){
        object = results1[i];
-       if (i==0) {lbl=object.label;}
-      if (i>0) {lbl=lbl+"-"+object.label;}
-      if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
-         objX=object.x;
+		 objX=object.x;
          objY=object.y;
          objW=object.width;
          objH=object.height;
+			       stroke(255,15,57);
+  strokeWeight(2);
+  noFill();
+  rect(objX,objY,objW,objH);
+  noStroke();
+  fill(255,15,57);
+  textSize(14);
+  textFont("Lato");
+  text(object.label, objX+ 10, objY + 24);
+       if (i==0) {lbl=object.label;}
+      if (i>0) {lbl=lbl+"-"+object.label;}
+      if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
+        
          vidClassification();}
        else {document.getElementById("Class1").innerHTML=lbl;}
 }
@@ -485,15 +496,7 @@ function vidGotResults(error, results2) {
     console.error(error);
   }
   cresult = results2[0].label;
-  stroke(255,15,57);
-  strokeWeight(2);
-  noFill();
-  rect(objX,objY,objW,objH);
-  noStroke();
-  fill(255,15,57);
-  textSize(14);
-  textFont("Lato");
-  text(cresult, objX+ 10, objY + 24);
+  
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
 if (play==0) {playClassify();}  
