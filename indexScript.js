@@ -20,7 +20,7 @@ var chks2;
 var objDet;
 var objDet1;
 var objDet2;
-
+var doglbl;
 var camCapture;
 let detections = [];
 let cresult;
@@ -379,15 +379,13 @@ document.getElementById('Class2').innerHTML = "";
 					 objY=object.y;
 					 objW=object.width;
 					 objH=object.height;
-					
-                                         if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
-								  stroke(255,15,57);
-					  
-                                                                  camClassification();}
-                                         else {loop(); document.getElementById("Class1").innerHTML=object.label;
-                                                document.getElementById("Class2").innerHTML="";}
+					 doglbl=object.lbl;
+                                         
                                   }
 				
+				if (doglbl=="dog"){document.getElementById("Class1").innerHTML=doglbl;camClassification();}
+                                         else {loop(); document.getElementById("Class1").innerHTML=doglbl;
+                                                document.getElementById("Class2").innerHTML="";}
                           }
 
                           function camGotResults(error, results2) {
@@ -485,13 +483,11 @@ strokeWeight(0);
  fill(0,0,0);
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
-      if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
-        
-         vidClassification();}
-       else {document.getElementById("Class1").innerHTML=lbl;}
+      doglbl=object.label;
 }
-      if (play==0) {playClassify();}
-      if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
+      if (play==0 & doglbl=="dog") {vidClassification();}
+      if (play==0 & doglbl!="dog") {playClassify();}
+	if (play==1){playClassify(); document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                     document.getElementById("Class2").innerHTML= "";}
 	
 }
