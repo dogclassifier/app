@@ -308,11 +308,11 @@ document.getElementById('Class2').innerHTML = "";
                           console.log(menuMode);
                           // change style sheet
                           if (menuMode==2){
-                            frameRate(20);
+                            frameRate(15);
                           }
 
                           if (menuMode==3){
-                            frameRate(20);
+                            frameRate(15);
                           }
 
 
@@ -455,13 +455,13 @@ function playClassify(){
 document.getElementById("Class1").innerHTML="";
 document.getElementById("Class2").innerHTML=""
 	
-if(menuMode==3) {play=0; doglbl=""; lbl=""; loop();
+if(menuMode==3) {play=0; loop();
 detector.detect(camCapture,vidGotDetection);}
 
 }
 
 function pauseClassify(){
-
+doglbl=""; lbl="";
 if(menuMode==3) {play=1;}
 }
 
