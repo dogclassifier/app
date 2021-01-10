@@ -496,7 +496,8 @@ stroke(0,0,255);
   fill(0,0,255);
   textSize(20);
   textFont("Lato");
-  text(object.label, objX+ 10, objY + 24);
+background(50);  
+text(object.label, objX+ 10, objY + 24);
  fill(0,0,0);
 document.getElementById("Class1").innerHTML=lbl;
 }
