@@ -475,7 +475,7 @@ function vidGotDetection(error,results1) {
   strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
-  noStroke();
+  //noStroke();
   fill(255,15,57);
   textSize(14);
   textFont("Lato");
@@ -490,6 +490,7 @@ function vidGotDetection(error,results1) {
       if (play==0) {playClassify();}
       if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                     document.getElementById("Class2").innerHTML= "";}
+	
 }
 
 function vidGotResults(error, results2) {
