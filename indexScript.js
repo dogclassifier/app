@@ -461,7 +461,7 @@ function vidClassification(){
 }
 
 function vidGotDetection(error,results1) {
-
+strokeWeight(0);
 	if(error){
          console.error(error);
        }
@@ -483,7 +483,7 @@ function vidGotDetection(error,results1) {
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
       if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
-        strokeWeight(0);
+        
          vidClassification();}
        else {document.getElementById("Class1").innerHTML=lbl;}
 }
