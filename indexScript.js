@@ -382,7 +382,7 @@ document.getElementById('Class2').innerHTML = "";
 					
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
 								  stroke(255,15,57);
-					  strokeWeight(2);
+					  strokeWeight(5);
 					  noFill();
 					  rect(objX,objY,objW,objH);
 					  noStroke();
@@ -472,7 +472,7 @@ strokeWeight(0);
          objW=object.width;
          objH=object.height;
 			       stroke(255,15,57);
-  strokeWeight(2);
+  strokeWeight(1);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
@@ -480,6 +480,7 @@ strokeWeight(0);
   textSize(14);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
+ fill(0,0,0);
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
       if (object.label=="dog"){document.getElementById("Class1").innerHTML="dog";
