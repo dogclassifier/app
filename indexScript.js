@@ -378,19 +378,20 @@ document.getElementById('Class2').innerHTML = "";
                                          }
                                   	for(let i = 0; i<results1.length; i++){
                                          let object = results1[i];
-					 objX=object.x;
-					 objY=object.y;
-					 objW=object.width;
-					 objH=object.height;
+					 
 					 if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
-      if(object.label=="dog") {doglbl=object.label;}
+      if(object.label=="dog") {doglbl=object.label;objX=object.x;
+					 objY=object.y;
+					 objW=object.width;
+					 objH=object.height;}
                                          
                                   }
 				
 				if (doglbl=="dog"){document.getElementById("Class1").innerHTML=doglbl;camClassification();}
                                          else {loop(); document.getElementById("Class1").innerHTML=lbl;
                                                 document.getElementById("Class2").innerHTML="";}
+				console.log(lbl);
                           }
 
                           function camGotResults(error, results2) {
@@ -412,7 +413,7 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class2").style.color="#00ff00";
 				  
 					
-				  loop();
+				  setTimeout(loop,3000);
                           }
 
 //// Video classification begins HERE
@@ -452,7 +453,7 @@ document.getElementById('Class2').innerHTML = "";
 }
 
 function playClassify(){
-document.getElementById("Class1").innerHTML="";
+
 document.getElementById("Class2").innerHTML=""
 	
 if(menuMode==3) {play=0; loop();
@@ -462,6 +463,8 @@ detector.detect(camCapture,vidGotDetection);}
 
 function pauseClassify(){
 doglbl=""; lbl="";
+document.getElementById("Class1").innerHTML="";
+document.getElementById("Class2").innerHTML=""
 if(menuMode==3) {play=1;}
 }
 
@@ -495,9 +498,10 @@ stroke(0,0,255);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
  fill(0,0,0);
+document.getElementById("Class1").innerHTML=lbl;
 }
       if (play==0 & doglbl=="dog") {vidClassification();}
-      if (play==0 & doglbl!="dog") {document.getElementById("Class1").innerHTML=lbl; playClassify();}
+      if (play==0 & doglbl!="dog") {playClassify();}
 	if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                     document.getElementById("Class2").innerHTML= "";}
 	
