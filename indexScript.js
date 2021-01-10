@@ -361,7 +361,7 @@ document.getElementById('Class2').innerHTML = "";
                         }
 
                         function snapFunction(){
-                                    if (menuMode==2){detector.detect(camCapture,camGotDetection);}
+                                    if (menuMode==2){doglbl="";detector.detect(camCapture,camGotDetection);}
                         }
 
                         function camClassification(){
@@ -379,12 +379,14 @@ document.getElementById('Class2').innerHTML = "";
 					 objY=object.y;
 					 objW=object.width;
 					 objH=object.height;
-					 doglbl=object.label;
+					 if (i==0) {lbl=object.label;}
+      if (i>0) {lbl=lbl+"-"+object.label;}
+      if(object.label=="dog") {doglbl=object.label;}
                                          
                                   }
 				
 				if (doglbl=="dog"){document.getElementById("Class1").innerHTML=doglbl;camClassification();}
-                                         else {loop(); document.getElementById("Class1").innerHTML=doglbl;
+                                         else {loop(); document.getElementById("Class1").innerHTML=lbl;
                                                 document.getElementById("Class2").innerHTML="";}
                           }
 
@@ -452,7 +454,8 @@ detector.detect(camCapture,vidGotDetection);}
 }
 
 function pauseClassify(){
-if(menuMode==3) {play=1;}
+
+if(menuMode==3) {doglbl=""; play=1;}
 }
 
 function vidClassification(){
@@ -474,7 +477,7 @@ strokeWeight(0);
 
        if (i==0) {lbl=object.label;}
       if (i>0) {lbl=lbl+"-"+object.label;}
-      doglbl=object.label;
+      if(object.label=="dog") {doglbl=object.label;}
 stroke(255,15,57);
   strokeWeight(2);
   noFill();
@@ -483,11 +486,11 @@ stroke(255,15,57);
   fill(255,15,57);
   textSize(18);
   textFont("Lato");
-  text(lbl, objX+ 10, objY + 24);
+  text(object.label, objX+ 10, objY + 24);
  fill(0,0,0);
 }
       if (play==0 & doglbl=="dog") {vidClassification();}
-      if (play==0 & doglbl!="dog") {playClassify();}
+      if (play==0 & doglbl!="dog") {document.getElementById("Class1").innerHTML=lbl; playClassify();}
 	if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                     document.getElementById("Class2").innerHTML= "";}
 	
