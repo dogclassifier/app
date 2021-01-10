@@ -519,8 +519,8 @@ function vidGotResults(error, results2) {
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
 	
-if (play==0) {setTimeout(playClassify,3000);}  
+if (play==0) {playClassify;}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
-
+doglbl="";
 }
