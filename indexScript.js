@@ -462,6 +462,7 @@ function vidClassification(){
 
 function vidGotDetection(error,results1) {
 strokeWeight(0);
+document.getElementById("Class2").innerHTML="";
 	if(error){
          console.error(error);
        }
@@ -495,13 +496,26 @@ strokeWeight(0);
 }
 
 function vidGotResults(error, results2) {
-  if (error) {
+  document.getElementById("Class2").innerHTML="";
+	if (error) {
     console.error(error);
   }
   cresult = results2[0].label;
   
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
+	objY=object.y;
+         objW=object.width;
+         objH=object.height;
+			       stroke(255,15,57);
+  strokeWeight(1);
+  noFill();
+  rect(objX,objY,objW,objH);
+  noStroke();
+  fill(255,15,57);
+  textSize(14);
+  textFont("Lato");
+  text(cresult, objX+ 10, objY + 24);
 if (play==0) {playClassify();}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
