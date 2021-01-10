@@ -382,14 +382,7 @@ document.getElementById('Class2').innerHTML = "";
 					
                                          if (object.label=="dog"){document.getElementById("Class1").innerHTML=object.label;
 								  stroke(255,15,57);
-					  strokeWeight(5);
-					  noFill();
-					  rect(objX,objY,objW,objH);
-					  noStroke();
-					  fill(255,15,57);
-					  textSize(18);
-					  textFont("Lato");
-					  text(cresult, objX+ 10, objY + 24);
+					  
                                                                   camClassification();}
                                          else {loop(); document.getElementById("Class1").innerHTML=object.label;
                                                 document.getElementById("Class2").innerHTML="";}
@@ -402,6 +395,14 @@ document.getElementById('Class2').innerHTML = "";
                                       console.error(error);
                                     }
                                     cresult = results2[0].label;
+				  strokeWeight(5);
+					  noFill();
+					  rect(objX,objY,objW,objH);
+					  noStroke();
+					  fill(255,15,57);
+					  textSize(18);
+					  textFont("Lato");
+					  text(cresult, objX+ 10, objY + 24);
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
@@ -462,7 +463,7 @@ function vidClassification(){
 
 function vidGotDetection(error,results1) {
 strokeWeight(0);
-document.getElementById("Class2").innerHTML="";
+//document.getElementById("Class2").innerHTML="";
 	if(error){
          console.error(error);
        }
@@ -473,12 +474,12 @@ document.getElementById("Class2").innerHTML="";
          objW=object.width;
          objH=object.height;
 			       stroke(255,15,57);
-  strokeWeight(1);
+  strokeWeight(2);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
   fill(255,15,57);
-  textSize(14);
+  textSize(18);
   textFont("Lato");
   text(object.label, objX+ 10, objY + 24);
  fill(0,0,0);
@@ -507,13 +508,13 @@ function vidGotResults(error, results2) {
 	objY=object.y;
          objW=object.width;
          objH=object.height;
-			       stroke(255,15,57);
+			       stroke(0,0,255);
   strokeWeight(1);
   noFill();
   rect(objX,objY,objW,objH);
   noStroke();
-  fill(255,15,57);
-  textSize(14);
+  fill(0,0,255);
+  textSize(18);
   textFont("Lato");
   text(cresult, objX+ 10, objY + 24);
 if (play==0) {playClassify();}  
