@@ -446,6 +446,8 @@ document.getElementById("elem").getContext("2d").clearRect(0,0,elem.width, elem.
   document.getElementById('pauseBtn').style.bottom="20px";
   document.getElementById('pauseBtn').style.left= Math.round(window.innerWidth/2)+30+"px";
   cresult="";
+doglbl="";
+lbl="";
 
 document.getElementById('Class1').innerHTML = "Play to start classifier and pause to stop";
 document.getElementById('Class2').innerHTML = "";
@@ -454,18 +456,17 @@ document.getElementById('Class2').innerHTML = "";
 
 function playClassify(){
 
-document.getElementById("Class2").innerHTML=""
+document.getElementById("Class2").innerHTML="";
 	
-if(menuMode==3) {play=0; loop();
-detector.detect(camCapture,vidGotDetection);}
+if(menuMode==3) {play=0; detector.detect(camCapture,vidGotDetection);}
 
 }
 
 function pauseClassify(){
 doglbl=""; 
 lbl="";
-document.getElementById("Class1").innerHTML="";
-document.getElementById("Class2").innerHTML=""
+document.getElementById("Class1").innerHTML="Classifier paused. Click on Play  to start.";
+document.getElementById("Class2").innerHTML="";
 if(menuMode==3) {play=1;}
 }
 
@@ -474,7 +475,7 @@ function vidClassification(){
 }
 
 function vidGotDetection(error,results1) {
-strokeWeight(0);
+
 //document.getElementById("Class2").innerHTML="";
 	if(error){
          console.error(error);
