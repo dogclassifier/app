@@ -373,8 +373,8 @@ lbl="";
 				if (menuMode==2){doglbl=""; lbl=""; detector.detect(camCapture,camGotDetection);}
                         }
 
-                        function camClassification(){
-                                    if(menuMode==2){classifier.classify(camCapture,camGotResults);}
+                       async function camClassification(){
+                                    if(menuMode==2){await classifier.classify(camCapture,camGotResults);}
                         }
 
                         function camGotDetection(error,results1) {
@@ -476,8 +476,8 @@ document.getElementById("Class2").innerHTML="";
 if(menuMode==3) {play=1;}
 }
 
-function vidClassification(){
-  if(menuMode==3) {classifier.classify(camCapture,vidGotResults);}
+async function vidClassification(){
+  if(menuMode==3) {await classifier.classify(camCapture,vidGotResults);}
 }
 
 function vidGotDetection(error,results1) {
