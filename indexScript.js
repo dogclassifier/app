@@ -411,9 +411,9 @@ document.getElementById('Class2').innerHTML = "";
                                     document.getElementById("Class1").innerHTML="dog";
                                     document.getElementById("Class2").innerHTML="Breed: "+cresult;
                                     document.getElementById("Class2").style.color="#00ff00";
-				  
+				  loop();
 					
-				  setTimeout(loop,3000);
+				  
                           }
 
 //// Video classification begins HERE
@@ -499,7 +499,7 @@ stroke(0,0,255);
   textFont("Lato");
   
 text(object.label, objX+ 10, objY + 24);
- fill(0,0,0);
+ 
 document.getElementById("Class1").innerHTML=lbl;
 }
       if (play==0 & doglbl=="dog") {vidClassification();}
@@ -518,9 +518,9 @@ function vidGotResults(error, results2) {
   
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
-	
+doglbl="";	
 if (play==0) {playClassify;}  
 if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
-doglbl="";
+
 }
