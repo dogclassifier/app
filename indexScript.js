@@ -362,7 +362,7 @@ document.getElementById('Class2').innerHTML = "";
 				if (menuMode==3 & play==1) {document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
                 document.getElementById("Class2").innerHTML= "";}
 				 if (menuMode==3 & play==0 & doglbl=="dog") {vidClassification();}
-      if (menuMode==3 & play==0 & doglbl!="dog") {setTimeout(playClassify,3000);}
+      if (menuMode==3 & play==0 & doglbl!="dog") {playClassify();}
                         }
 
                         function snapFunction(){
