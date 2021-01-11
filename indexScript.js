@@ -522,6 +522,6 @@ function vidGotResults(error, results2) {
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
 doglbl="";
-	 if (menuMode==3 & play==0 & doglbl!="dog") {playClassify();}
+	 
 
 }
