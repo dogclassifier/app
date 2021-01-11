@@ -34,7 +34,7 @@ let status2=0
 let cnv;
 let w=0;
 let h=0;
-let play=0;
+let play=1;
 let pause=0;
 let menuMode=0;
 let head=0;
@@ -289,7 +289,9 @@ document.getElementById('Class1').innerHTML = "Click on camera button to identif
 document.getElementById('Class2').innerHTML = "";
   cresult="";
   startCam();
-
+Play=1;
+doglbl="";
+lbl="";
 
 }
 
