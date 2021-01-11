@@ -314,7 +314,7 @@ lbl="";
                           }
 
                           if (menuMode==3){
-                            frameRate(10);
+                            frameRate(24);
                           }
 
 
