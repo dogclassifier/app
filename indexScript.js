@@ -312,7 +312,7 @@ document.getElementById('Class2').innerHTML = "";
                           }
 
                           if (menuMode==3){
-                            frameRate(5);
+                            frameRate(10);
                           }
 
 
