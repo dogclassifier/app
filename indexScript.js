@@ -454,7 +454,7 @@ doglbl="";
 lbl="";
 
 document.getElementById('Class1').innerHTML = "Play to start classifier and pause to stop";
-document.getElementById('Class2').innerHTML = "";
+document.getElementById('Class2').innerHTML = "Just wait for video to start";
   startCam();
 }
 
