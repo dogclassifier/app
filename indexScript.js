@@ -359,6 +359,10 @@ document.getElementById('Class2').innerHTML = "";
                               if (menuMode==0 & status1==1 & status2==1) {document.getElementById("glow1").innerHTML="Identify 120 breeds";
                                                                           document.getElementById("contMenu").style.display="block";}
                                if (menuMode==2 | menuMode==3){loop(); image(camCapture,0,0,w,h);}
+				if (menuMode==3 & play==1) {document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
+                document.getElementById("Class2").innerHTML= "";}
+				 if (menuMode==3 & play==0 & doglbl=="dog") {vidClassification();}
+      if (menuMode==3 & play==0 & doglbl!="dog") {playClassify();}
                         }
 
                         function snapFunction(){
@@ -503,10 +507,8 @@ text(object.label, objX+ 10, objY + 24);
  
 document.getElementById("Class1").innerHTML=lbl;
 }
-      if (play==0 & doglbl=="dog") {vidClassification();}
-      if (play==0 & doglbl!="dog") {playClassify();}
-	if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
-                    document.getElementById("Class2").innerHTML= "";}
+     
+	
 	
 }
 
@@ -520,8 +522,5 @@ function vidGotResults(error, results2) {
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
 doglbl="";	
-if (play==0) {playClassify;}  
-if (play==1){document.getElementById("Class1").innerHTML= "Classifier paused. Click on Play  to start.";
-                document.getElementById("Class2").innerHTML= "";}
 
 }
