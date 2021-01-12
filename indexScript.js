@@ -310,11 +310,11 @@ lbl="";
                           console.log(menuMode);
                           // change style sheet
                           if (menuMode==2){
-                            frameRate(24);
+                            //frameRate(24);
                           }
 
                           if (menuMode==3){
-                            frameRate(24);
+                            //frameRate(24);
                           }
 
 
