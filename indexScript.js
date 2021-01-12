@@ -477,7 +477,8 @@ if(menuMode==3) {play=1;}
 }
 
 async function vidClassification(){
-  if(menuMode==3) {await classifier.classify(camCapture,vidGotResults);}
+noLoop();  
+if(menuMode==3) {await classifier.classify(camCapture,vidGotResults);}
 }
 
 function vidGotDetection(error,results1) {
@@ -524,5 +525,6 @@ function vidGotResults(error, results2) {
   document.getElementById("Class2").innerHTML="Breed: "+cresult;
   document.getElementById("Class2").style.color="#00ff00";
  doglbl="";
+loop();
 
 }
